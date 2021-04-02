@@ -5,7 +5,7 @@ import "./Home.css"
 function Home() {
     return (
         <>
-        <h1>let's go!</h1>
+        
         <Searchbar />
         </>
     );
