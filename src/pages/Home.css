@@ -1,0 +1,9 @@
+body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-image: url("../components/Search/background_img/park4.jpg");
+    background-size: cover;
+    background-color: #464646;
+}
+
