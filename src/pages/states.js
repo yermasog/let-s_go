@@ -1,5 +1,8 @@
 import React from "react";
-
+import SearchContext from "../utils/SearchContext"
+import Header from "../components/Header/Header"
+import ImageCard from "../components/Image/ImageCard"
+import Description from "../components/Description/Description";
 
 
 function States() {
@@ -21,18 +24,16 @@ function States() {
             //  onClick={}
             className="button success">Let's go!</button>
          </form>
-         <div>
-            state name: hero section 
-         </div>
+        <Header />
          <div>
             sort/filter
          </div>
-         <div>
-            <div>
-               image
+         <div className="grid-x grid-margin-x">
+            <div className="cell small-3 box">
+               <ImageCard />
             </div>
-            <div>
-               description 
+            <div className="cell small-9 box">
+               <Description />
             </div>
          </div>
          </div>

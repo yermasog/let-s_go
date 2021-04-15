@@ -1,0 +1,9 @@
+.box {
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    /* background-image: linear-gradient(to right, green, blue); */
+    padding: 3rem;
+}
+
+h1 {
+    text-align: center;
+}
