@@ -4,18 +4,18 @@ import "./Searchbar.css"
 
 function Searchbar() {
 
-    const [searchState, setSearchState] = useState()
+    // const [searchState, setSearchState] = useState()
 
-    const handleInputChange = event => {
-        setSearchState(event.target.value)
-        console.log(event.target.value);
-    }
+    // const handleInputChange = event => {
+    //     setSearchState(event.target.value)
+    //     console.log(event.target.value);
+    // }
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        setSearchState(event.target.value)
-        console.log(searchState);
-    }
+    // const handleSubmit = event => {
+    //     event.preventDefault();
+    //     setSearchState(event.target.value)
+    //     console.log(searchState);
+    // }
 
     return (
         <>
@@ -28,12 +28,12 @@ function Searchbar() {
                             type="text"
                             id="state"
                             name="state"
-                            value={searchState}
-                            onChange={handleInputChange}
+                            // value={searchState}
+                            // onChange={handleInputChange}
                             placeholder="Search for a State"
                         />
                         <div className="center non-opaque">
-                            <button onClick={handleSubmit} className="clear button mybutton success">Let's go!</button>
+                            {/* <button onClick={handleSubmit} className="clear button mybutton success">Let's go!</button> */}
                         </div>
                     </form>
                 </div>

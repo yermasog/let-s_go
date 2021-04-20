@@ -11,8 +11,8 @@ function App() {
     <Router>
     <div>
       <SearchContext.Provider value={searchState}>
-        <Route exact path="/" render={() => <Home />} />
-        <Route path="/search" render={() => <States />} />
+        {/* <Route exact path="/let-s_go" render={() => <Home />} /> */}
+        <Route path="/let-s_go/search" render={() => <States />} />
      </SearchContext.Provider>
     </div>
     </Router>

@@ -1,11 +1,11 @@
-import "./Header.css"
+import styles from "./Header.module.css"
 
 function Header() {
 
   
     return (
         <>
-           <div className="box">
+           <div className={styles.box}>
                <h1>Minnesota</h1>
            </div>
         </>
