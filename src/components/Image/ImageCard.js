@@ -6,7 +6,7 @@ function ImageCard() {
     return (
         <>
            <div className="box-padding">
-               <img src="https://via.placeholder.com/350"/>
+               <img src="https://via.placeholder.com/350" alt=""/>
            </div>
         </>
     )

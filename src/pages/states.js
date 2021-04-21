@@ -4,7 +4,7 @@ import Header from "../components/Header/Header"
 import ImageCard from "../components/Image/ImageCard"
 import Description from "../components/Description/Description";
 import React, { useContext } from "react";
-import API from "../utils/API"
+// import API from "../utils/API"
 
 
 function States(props) {

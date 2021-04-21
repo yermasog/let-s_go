@@ -7,23 +7,27 @@ import API from "./utils/API"
 
 function App() {
   const [searchState, setSearchState] = useState()
+
+  const [resultState, setResultState] = useState([])
  
     const handleInputChange = event => {
-       setSearchState(event.target.value)
+       setSearchState(event.target.value.toUpperCase())
        console.log(event.target.value);
     }
  
     const handleSubmit = event => {
        event.preventDefault();
-       setSearchState(event.target.value)
        apiSearch(searchState)
       
     }
  
     const apiSearch = query => {
        API.search(query)
-          .then(res => console.log(res.data.data))
-          .catch(err => console.log(err))
+          .then(res => 
+            {setResultState(res.data.data);
+            console.log(resultState)})
+          .catch(err => console.log(err));
+        
     }
 
   return (
