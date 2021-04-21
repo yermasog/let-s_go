@@ -4,11 +4,14 @@ import States from "./pages/States"
 import React, { useState } from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import API from "./utils/API"
+import ResultContext from "./utils/ResultContext";
 
 function App() {
   const [searchState, setSearchState] = useState()
 
-  const [resultState, setResultState] = useState([])
+  const [resultState, setResultState] = useState({
+    results: []
+  })
  
     const handleInputChange = event => {
        setSearchState(event.target.value.toUpperCase())
@@ -34,8 +37,10 @@ function App() {
     <Router>
     <div>
       <SearchContext.Provider value={searchState}>
+      <ResultContext.Provider value={resultState}>
         <Route exact path="/let-s_go" render={() => <Home handleInput={handleInputChange} handleSubmit={handleSubmit} />} />
         <Route path="/let-s_go/search" render={() => <States handleInput={handleInputChange} handleSubmit={handleSubmit} />} />
+     </ResultContext.Provider>  
      </SearchContext.Provider>
     </div>
     </Router>
