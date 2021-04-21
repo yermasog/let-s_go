@@ -1,21 +1,11 @@
-// import TextField from '@material-ui/core/TextField';
-import React, { useState } from "react";
+
+import React, { useContext } from "react";
 import "./Searchbar.css"
+import SearchContext from "../../utils/SearchContext"
 
-function Searchbar() {
+function Searchbar(props) {
 
-    // const [searchState, setSearchState] = useState()
-
-    // const handleInputChange = event => {
-    //     setSearchState(event.target.value)
-    //     console.log(event.target.value);
-    // }
-
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-    //     setSearchState(event.target.value)
-    //     console.log(searchState);
-    // }
+    const stateName = useContext(SearchContext)
 
     return (
         <>
@@ -28,12 +18,14 @@ function Searchbar() {
                             type="text"
                             id="state"
                             name="state"
-                            // value={searchState}
-                            // onChange={handleInputChange}
+                            value={stateName}
+                            onChange={props.handleInput}
                             placeholder="Search for a State"
                         />
                         <div className="center non-opaque">
-                            {/* <button onClick={handleSubmit} className="clear button mybutton success">Let's go!</button> */}
+                            <button
+                            onClick={props.handleSubmit} 
+                            className="clear button mybutton success">Let's go!</button>
                         </div>
                     </form>
                 </div>

@@ -1,34 +1,14 @@
 
-// import SearchContext from "../utils/SearchContext"
+import SearchContext from "../utils/SearchContext"
 import Header from "../components/Header/Header"
 import ImageCard from "../components/Image/ImageCard"
 import Description from "../components/Description/Description";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import API from "../utils/API"
 
 
-function States() {
-   const [searchState, setSearchState] = useState(
-     
-   )
-
-   const handleInputChange = event => {
-      setSearchState(event.target.value)
-      console.log(event.target.value);
-   }
-
-   const handleSubmit = event => {
-      event.preventDefault();
-      setSearchState(event.target.value)
-      apiSearch(searchState)
-     
-   }
-
-   const apiSearch = query => {
-      API.search(query)
-         .then(res => console.log(res.data.data))
-         .catch(err => console.log(err))
-   }
+function States(props) {
+  const stateName = useContext(SearchContext)
 
    return (
       <>
@@ -39,13 +19,13 @@ function States() {
                   type="text"
                   id="state"
                   name="state"
-                  value={searchState}
-                  onChange={handleInputChange}
+                  value={stateName}
+                  onChange={props.handleInput}
                   placeholder="Search for a State"
                />
 
                <button
-                  onClick={handleSubmit}
+                  onClick={props.handleSubmit}
                   className="button success">Let's go!</button>
             </form>
             <Header />

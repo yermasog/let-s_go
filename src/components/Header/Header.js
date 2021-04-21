@@ -6,7 +6,7 @@ function Header() {
     return (
         <>
            <div className={styles.box}>
-               <h1>Minnesota</h1>
+               <h1>M</h1>
            </div>
         </>
     )
