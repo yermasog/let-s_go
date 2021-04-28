@@ -4,15 +4,15 @@ import ResultContext from "../../utils/ResultContext"
 
 
 function Description() {
-    const results = useContext(ResultContext)
-    const arr = ["hello", "my", "name", "is"]
+    const {results} = useContext(ResultContext)
+    // const arr = ["hello", "my", "name", "is"]
 
     return (
         <>
-            {arr.map((item) => (
-                <div>
+            {results.map((description, index) => (
+                <div  key={index}>
                     <h2>Description</h2>
-                    <p>{item}</p>
+                    <p>{results.description}</p>
                 </div>
             ))}
         </>

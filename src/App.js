@@ -8,10 +8,11 @@ import ResultContext from "./utils/ResultContext";
 
 function App() {
   const [searchState, setSearchState] = useState()
-
-  const [resultState, setResultState] = useState({
-    results: []
-  })
+  const [resultState, setResultState] = useState(
+    {
+      results: []
+    }
+  )
  
     const handleInputChange = event => {
        setSearchState(event.target.value.toUpperCase())
@@ -26,12 +27,13 @@ function App() {
  
     const apiSearch = query => {
        API.search(query)
-          .then(res => 
-            {setResultState(res.data.data);
+          .then(res => {setResultState({results:res.data.data});
             console.log(resultState)})
           .catch(err => console.log(err));
         
     }
+
+    // const log = () => (console.log(resultState))
 
   return (
     <Router>
