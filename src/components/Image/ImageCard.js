@@ -1,13 +1,18 @@
 import "./ImageCard.css"
+import React, { useContext } from "react";
+import ResultContext from "../../utils/ResultContext"
 
 function ImageCard() {
+    const { results } = useContext(ResultContext)
 
-  
     return (
         <>
-           <div className="box-padding">
-               <img src="https://via.placeholder.com/350" alt=""/>
-           </div>
+            {results.map((park, index) => (
+
+            <div key={index} className="box-padding">
+                <img src={park.images[0].url} alt="{park.images[0].altText}" />
+            </div>
+            ))}
         </>
     )
 
